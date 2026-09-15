@@ -1,212 +1,148 @@
-const listeningSections = [
+const listeningLessons = [
   {
-    title: "短い会話",
-    subtitle: "Percakapan singkat",
-    count: "10問",
-    time: "約5分",
+    number: "01",
+    title: "会話のポイント",
+    subtitle: "Percakapan sehari-hari",
+    level: "N2",
+    time: "約10分",
   },
   {
-    title: "中程度の会話",
-    subtitle: "Percakapan menengah",
-    count: "10問",
-    time: "約8分",
+    number: "02",
+    title: "話の内容",
+    subtitle: "Memahami isi pembicaraan",
+    level: "N2",
+    time: "約10分",
   },
   {
-    title: "長い会話",
-    subtitle: "Percakapan panjang",
-    count: "5問",
-    time: "約7分",
+    number: "03",
+    title: "話し手の意図",
+    subtitle: "Memahami maksud pembicara",
+    level: "N2",
+    time: "約12分",
   },
   {
-    title: "総合聴解",
-    subtitle: "Latihan listening N2",
-    count: "15問",
+    number: "04",
+    title: "情報の整理",
+    subtitle: "Mengolah informasi yang didengar",
+    level: "N2",
     time: "約12分",
   },
 ];
 
-const focusItems = [
-  "状況を先に理解する",
-  "重要な言葉を聞き取る",
-  "話し手の意図を考える",
-];
-
 export default function ListeningPage() {
   return (
-    <main className="min-h-screen bg-[#F7F3EA] text-[#242424]">
-      <div className="mx-auto max-w-5xl px-5 pb-24 pt-8 sm:px-8">
-
-        {/* Header */}
-        <header className="mb-8">
-          <p className="text-xs tracking-[0.28em] text-[#8A857C]">
-            日本語学習
+    <main className="min-h-screen bg-[#F7F3EA] text-[#252525]">
+      <div className="mx-auto max-w-5xl px-5 py-8 sm:px-8">
+        <header className="mb-10">
+          <p className="text-xs font-medium tracking-[0.25em] text-[#8A8175]">
+            KAIRO
           </p>
 
-          <div className="mt-2 flex items-end justify-between">
-            <div>
-              <h1 className="text-3xl font-semibold tracking-tight">
-                聴解
-              </h1>
-              <p className="mt-1 text-sm text-[#777168]">
-                Listening N2
-              </p>
-            </div>
+          <h1 className="mt-2 text-3xl font-semibold tracking-tight">
+            聴解
+          </h1>
 
-            <div className="rounded-full bg-[#242424] px-4 py-2 text-xs font-medium text-white">
-              N2
-            </div>
-          </div>
+          <p className="mt-2 text-sm text-[#777067]">
+            Listening
+          </p>
         </header>
 
-        {/* Hero */}
-        <section className="mb-6 overflow-hidden rounded-[28px] bg-[#292B2C] p-6 text-white shadow-sm sm:p-8">
-          <div className="flex items-start justify-between">
+        <section className="mb-8 rounded-[28px] bg-[#292929] p-7 text-white shadow-sm sm:p-9">
+          <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="text-xs tracking-[0.22em] text-[#B9B5AD]">
-                LISTENING
+              <p className="text-xs tracking-[0.2em] text-[#BDB7AD]">
+                N2 LISTENING
               </p>
 
               <h2 className="mt-3 text-3xl font-semibold">
-                聞く力を鍛える
+                聴く力を鍛える
               </h2>
 
-              <p className="mt-3 max-w-md text-sm leading-6 text-[#D3D0C9]">
-                会話の流れを理解し、重要な情報と話し手の意図を
-                聞き取る練習をしましょう。
+              <p className="mt-3 max-w-md text-sm leading-6 text-[#D7D2CA]">
+                会話や説明を聞いて、必要な情報を正確に理解する練習です。
               </p>
             </div>
 
-            <div className="ml-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#E85D4A] text-2xl">
-              ♪
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E85D4A] text-sm font-semibold">
+              N2
             </div>
           </div>
 
-          <button className="mt-7 w-full rounded-2xl bg-[#E85D4A] px-5 py-4 text-sm font-semibold text-white transition hover:opacity-90">
-            今日の聴解を始める
-          </button>
-        </section>
-
-        {/* Progress */}
-        <section className="mb-6 rounded-[24px] border border-[#DED8CD] bg-white/70 p-5">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xs text-[#8A857C]">あなたの進捗</p>
-              <p className="mt-1 text-lg font-semibold">0%</p>
-            </div>
-
-            <p className="text-xs text-[#8A857C]">
-              まだ学習データがありません
-            </p>
-          </div>
-
-          <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8E2D8]">
+          <div className="mt-7 h-2 overflow-hidden rounded-full bg-white/10">
             <div className="h-full w-0 rounded-full bg-[#E85D4A]" />
           </div>
+
+          <div className="mt-3 flex justify-between text-xs text-[#BDB7AD]">
+            <span>学習進捗</span>
+            <span>0%</span>
+          </div>
         </section>
 
-        {/* Practice */}
         <section>
-          <div className="mb-4 flex items-end justify-between">
+          <div className="mb-5 flex items-end justify-between">
             <div>
-              <p className="text-xs tracking-[0.18em] text-[#8A857C]">
-                PRACTICE
+              <h2 className="text-xl font-semibold">リスニング練習</h2>
+              <p className="mt-1 text-sm text-[#8A8175]">
+                Pilih latihan untuk mulai belajar
               </p>
-              <h2 className="mt-1 text-xl font-semibold">
-                聴解トレーニング
-              </h2>
             </div>
 
-            <span className="text-xs text-[#8A857C]">
-              4コース
+            <span className="text-xs text-[#8A8175]">
+              4 LESSONS
             </span>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
-            {listeningSections.map((section, index) => (
-              <button
-                key={section.title}
-                className="group rounded-[22px] border border-[#DED8CD] bg-white p-5 text-left transition hover:-translate-y-0.5 hover:shadow-md"
+          <div className="grid gap-4 sm:grid-cols-2">
+            {listeningLessons.map((lesson) => (
+              <article
+                key={lesson.number}
+                className="rounded-[24px] border border-[#E4DED4] bg-white/80 p-5 shadow-sm transition hover:-translate-y-0.5"
               >
                 <div className="flex items-start justify-between">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#F1EDE5] text-sm font-semibold">
-                    {String(index + 1).padStart(2, "0")}
-                  </div>
+                  <span className="text-sm font-semibold text-[#E85D4A]">
+                    {lesson.number}
+                  </span>
 
-                  <span className="text-xs text-[#8A857C]">
-                    {section.count}
+                  <span className="rounded-full bg-[#F1EEE8] px-3 py-1 text-[11px] font-medium text-[#777067]">
+                    {lesson.level}
                   </span>
                 </div>
 
-                <h3 className="mt-5 text-base font-semibold">
-                  {section.title}
+                <h3 className="mt-5 text-lg font-semibold">
+                  {lesson.title}
                 </h3>
 
-                <p className="mt-1 text-sm text-[#777168]">
-                  {section.subtitle}
+                <p className="mt-1 text-sm text-[#777067]">
+                  {lesson.subtitle}
                 </p>
 
-                <p className="mt-4 text-xs text-[#9A948A]">
-                  {section.time}
-                </p>
-              </button>
-            ))}
-          </div>
-        </section>
+                <div className="mt-5 flex items-center justify-between">
+                  <span className="text-xs text-[#9A9288]">
+                    {lesson.time}
+                  </span>
 
-        {/* Strategy */}
-        <section className="mt-8">
-          <div className="mb-4">
-            <p className="text-xs tracking-[0.18em] text-[#8A857C]">
-              STRATEGY
-            </p>
-            <h2 className="mt-1 text-xl font-semibold">
-              聴解のポイント
-            </h2>
-          </div>
-
-          <div className="space-y-3">
-            {focusItems.map((item, index) => (
-              <div
-                key={item}
-                className="flex items-center gap-4 rounded-[20px] bg-white p-4"
-              >
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#F1EDE5] text-xs font-semibold">
-                  {index + 1}
+                  <button className="rounded-full bg-[#E85D4A] px-4 py-2 text-xs font-semibold text-white">
+                    始める
+                  </button>
                 </div>
-
-                <p className="text-sm font-medium">
-                  {item}
-                </p>
-              </div>
+              </article>
             ))}
           </div>
         </section>
 
-        {/* Bottom navigation */}
-        <nav className="fixed bottom-0 left-0 right-0 border-t border-[#DED8CD] bg-[#F7F3EA]/95 backdrop-blur">
-          <div className="mx-auto grid max-w-5xl grid-cols-5">
-            {[
-              ["⌂", "ホーム"],
-              ["学", "学習"],
-              ["↻", "復習"],
-              ["✓", "テスト"],
-              ["○", "マイページ"],
-            ].map(([icon, label], index) => (
-              <button
-                key={label}
-                className={`flex flex-col items-center gap-1 py-3 text-[11px] ${
-                  index === 1
-                    ? "font-semibold text-[#E85D4A]"
-                    : "text-[#777168]"
-                }`}
-              >
-                <span className="text-base">{icon}</span>
-                {label}
-              </button>
-            ))}
-          </div>
-        </nav>
+        <section className="mt-8 rounded-[24px] border border-[#E4DED4] bg-white/70 p-6">
+          <p className="text-xs font-medium tracking-[0.15em] text-[#E85D4A]">
+            SMART REVIEW
+          </p>
 
+          <h2 className="mt-2 text-lg font-semibold">
+            聞き取れなかった問題を復習
+          </h2>
+
+          <p className="mt-2 text-sm leading-6 text-[#777067]">
+            間違えた問題は、あとで優先的に復習できます。
+          </p>
+        </section>
       </div>
     </main>
   );
