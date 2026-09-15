@@ -1,69 +1,162 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-[#F7F3EA] text-[#1C1C1C]">
+      <div className="mx-auto flex min-h-screen max-w-md flex-col px-5 pb-24">
+        
+        {/* Header */}
+        <header className="flex items-center justify-between py-6">
+          <div>
+            <p className="text-xs tracking-[0.25em] text-[#77736B]">
+              日本語学習
+            </p>
+            <h1 className="mt-1 text-2xl font-semibold tracking-tight">
+              KAIRO
+            </h1>
+          </div>
+
+          <button
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#DED8CC] bg-white"
+            aria-label="通知"
+          >
+            ◌
+          </button>
+        </header>
+
+        {/* Greeting */}
+        <section className="pt-6">
+          <p className="text-sm text-[#77736B]">おかえりなさい</p>
+          <h2 className="mt-1 text-2xl font-semibold">
+            Bangkit
+          </h2>
+        </section>
+
+        {/* N2 Readiness */}
+        <section className="mt-7 overflow-hidden rounded-3xl bg-[#222222] p-6 text-[#F8F5EE]">
+          <div className="flex items-start justify-between">
+            <div>
+              <p className="text-xs tracking-[0.2em] text-[#BDB8AE]">
+                N2 READY
+              </p>
+
+              <p className="mt-4 text-5xl font-semibold">
+                0<span className="text-2xl">%</span>
+              </p>
+            </div>
+
+            <div className="rounded-full bg-[#B94A3A] px-3 py-1 text-xs">
+              N2
+            </div>
+          </div>
+
+          <p className="mt-5 text-sm leading-6 text-[#C9C4BA]">
+            まだ学習データがありません。
+            <br />
+            今日からN2の学習を始めましょう。
           </p>
+
+          <button className="mt-6 w-full rounded-2xl bg-[#B94A3A] px-5 py-4 text-sm font-medium text-white">
+            今日の学習を始める
+          </button>
+        </section>
+
+        {/* Skills */}
+        <section className="mt-8">
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg font-semibold">学習スキル</h3>
+            <span className="text-xs text-[#77736B]">N2</span>
+          </div>
+
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            {[
+              ["漢字", "Kanji"],
+              ["語彙", "Kosakata"],
+              ["文法", "Tata Bahasa"],
+              ["読解", "Membaca"],
+              ["聴解", "Menyimak"],
+            ].map(([jp, id]) => (
+              <div
+                key={jp}
+                className="rounded-2xl border border-[#E1DBD0] bg-white p-4"
+              >
+                <p className="text-lg font-semibold">{jp}</p>
+                <p className="mt-1 text-xs text-[#77736B]">{id}</p>
+
+                <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-[#ECE7DE]">
+                  <div className="h-full w-0 rounded-full bg-[#B94A3A]" />
+                </div>
+
+                <p className="mt-2 text-right text-[11px] text-[#99938A]">
+                  0%
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Today's Learning */}
+        <section className="mt-8">
+          <h3 className="text-lg font-semibold">今日の学習</h3>
+
+          <div className="mt-4 rounded-2xl border border-[#E1DBD0] bg-white p-5">
+            <p className="text-xs text-[#77736B]">
+              今日の重点
+            </p>
+
+            <div className="mt-3 flex items-center justify-between">
+              <div>
+                <p className="text-lg font-semibold">
+                  学習を始めましょう
+                </p>
+                <p className="mt-1 text-sm text-[#77736B]">
+                  N2の力を少しずつ伸ばしていきます。
+                </p>
+              </div>
+
+              <span className="text-xl">→</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Review */}
+        <section className="mt-8">
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg font-semibold">復習</h3>
+            <span className="text-xs text-[#77736B]">0問</span>
+          </div>
+
+          <div className="mt-4 rounded-2xl bg-[#EEE9DF] p-5">
+            <p className="text-sm leading-6 text-[#5F5B54]">
+              今日の復習はありません。
+              学習すると、ここに復習項目が表示されます。
+            </p>
+          </div>
+        </section>
+      </div>
+
+      {/* Bottom Navigation */}
+      <nav className="fixed bottom-0 left-0 right-0 border-t border-[#DED8CC] bg-[#F7F3EA]/95 backdrop-blur">
+        <div className="mx-auto grid max-w-md grid-cols-5 px-3 py-3 text-center">
+          {[
+            ["⌂", "ホーム"],
+            ["▣", "学習"],
+            ["↻", "復習"],
+            ["□", "テスト"],
+            ["○", "マイページ"],
+          ].map(([icon, label], index) => (
+            <button
+              key={label}
+              className={`flex flex-col items-center gap-1 text-[11px] ${
+                index === 0
+                  ? "font-semibold text-[#B94A3A]"
+                  : "text-[#77736B]"
+              }`}
+            >
+              <span className="text-lg">{icon}</span>
+              {label}
+            </button>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </nav>
+    </main>
   );
 }
