@@ -135,29 +135,51 @@ export default function Home() {
       </div>
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 border-t border-[#DED8CC] bg-[#F7F3EA]/95 backdrop-blur">
-        <div className="mx-auto grid max-w-md grid-cols-5 px-3 py-3 text-center">
-          {[
-            ["⌂", "ホーム"],
-            ["▣", "学習"],
-            ["↻", "復習"],
-            ["□", "テスト"],
-            ["○", "マイページ"],
-          ].map(([icon, label], index) => (
-            <link
-              key={label}
-              className={`flex flex-col items-center gap-1 text-[11px] ${
-                index === 0
-                  ? "font-semibold text-[#B94A3A]"
-                  : "text-[#77736B]"
-              }`}
-            >
-              <span className="text-lg">{icon}</span>
-              {label}
-            </link>
-          ))}
-        </div>
-      </nav>
+      <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-[#DED8CC] bg-[#F8F5ED]/95 backdrop-blur-md">
+  <div className="mx-auto grid max-w-md grid-cols-5 px-3 py-3 text-center">
+
+    <Link
+      href="/"
+      className="flex flex-col items-center gap-1 text-[11px] font-semibold text-[#B94A3A]"
+    >
+      <span className="text-lg">⌂</span>
+      <span>ホーム</span>
+    </Link>
+
+    <Link
+      href="/study"
+      className="flex flex-col items-center gap-1 text-[11px] text-[#77736B]"
+    >
+      <span className="text-lg">▣</span>
+      <span>学習</span>
+    </Link>
+
+    <Link
+      href="/review"
+      className="flex flex-col items-center gap-1 text-[11px] text-[#77736B]"
+    >
+      <span className="text-lg">↻</span>
+      <span>復習</span>
+    </Link>
+
+    <Link
+      href="/test"
+      className="flex flex-col items-center gap-1 text-[11px] text-[#77736B]"
+    >
+      <span className="text-lg">□</span>
+      <span>テスト</span>
+    </Link>
+
+    <Link
+      href="/me"
+      className="flex flex-col items-center gap-1 text-[11px] text-[#77736B]"
+    >
+      <span className="text-lg">○</span>
+      <span>マイページ</span>
+    </Link>
+
+  </div>
+</nav>
     </main>
   );
 }
