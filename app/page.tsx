@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#F7F3EA] text-[#1C1C1C]">
@@ -143,7 +144,7 @@ export default function Home() {
             ["□", "テスト"],
             ["○", "マイページ"],
           ].map(([icon, label], index) => (
-            <button
+            <link
               key={label}
               className={`flex flex-col items-center gap-1 text-[11px] ${
                 index === 0
@@ -153,7 +154,7 @@ export default function Home() {
             >
               <span className="text-lg">{icon}</span>
               {label}
-            </button>
+            </link>
           ))}
         </div>
       </nav>
